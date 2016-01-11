@@ -12,4 +12,3 @@ pids
 node_modules
 
 # output directory
-out/*.*
