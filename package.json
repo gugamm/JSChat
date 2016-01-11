@@ -1,0 +1,26 @@
+{
+  "name": "jschat",
+  "version": "0.0.1",
+  "description": "A javascript chat using react and socket.io",
+  "main": "main.js",
+  "scripts": {
+    "build": "browserify main.js -o out/bundle.js -t [ babelify --presets [ es2015 react ] ]",
+    "watch": "watchify main.js -o out/bundle.js -t [ babelify --presets [ es2015 react ] ] -v"
+  },
+  "keywords": [
+    "Chat",
+    "React",
+    "Socket",
+    "Javascript"
+  ],
+  "author": "gugamm",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "watchify": "^3.7.0"
+  }
+}
