@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "browserify main.js -o out/bundle.js -t [ babelify --presets [ es2015 react ] ]",
-    "watch": "watchify main.js -o out/bundle.js -t [ babelify --presets [ es2015 react ] ] -v"
+    "watch": "watchify main.js -o out/bundle.js -t [ babelify --presets [ es2015 react ] ] -v",
+	"postinstall" : "mkdir out"
   },
   "keywords": [
     "Chat",
@@ -13,8 +14,8 @@
     "Socket",
     "Javascript"
   ],
-  "author": "gugamm",
-  "license": "ISC",
+  "authors": ["gugamm","hugogrochau"],
+  "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",

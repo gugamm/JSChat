@@ -4,7 +4,7 @@ export default class extends React.Component {
     constructor(props) {
         "use strict";
         super(props);
-        this.state = {messages : "Hello\n My Name is Elder Prince"};
+        this.state = {messages : ""};
     }
 
     hSend(target) {
