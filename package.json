@@ -4,9 +4,9 @@
   "description": "A javascript chat using react and socket.io",
   "main": "main.js",
   "scripts": {
-    "build": "browserify main.js -o out/bundle.js -t [ babelify --presets [ es2015 react ] ]",
-    "watch": "watchify main.js -o out/bundle.js -t [ babelify --presets [ es2015 react ] ] -v",
-	"postinstall" : "mkdir out"
+    "build": "browserify main.jsx -o out/bundle.js -t [ babelify --presets [ es2015 react ] ]",
+    "watch": "watchify main.jsx -o out/bundle.js -t [ babelify --presets [ es2015 react ] ] -v",
+    "postinstall": "mkdir out"
   },
   "keywords": [
     "Chat",
@@ -14,7 +14,10 @@
     "Socket",
     "Javascript"
   ],
-  "authors": ["gugamm","hugogrochau"],
+  "authors": [
+    "gugamm",
+    "hugogrochau"
+  ],
   "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
@@ -24,5 +27,11 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "material-ui": "^0.14.2",
+    "react-tap-event-plugin": "^0.2.1",
+    "socket.io": "^1.4.4",
+    "socket.io-client": "^1.4.4"
   }
 }
