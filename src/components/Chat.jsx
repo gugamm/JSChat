@@ -1,5 +1,7 @@
 import React from 'react';
 import ChatMessages from './ChatMessages.jsx';
+import TextField from 'material-ui/lib/text-field';
+import FlatButton from 'material-ui/lib/flat-button';
 
 export default class Chat extends React.Component {
     constructor(props) {
@@ -11,27 +13,36 @@ export default class Chat extends React.Component {
             this.setState(this.state);
         });
         this.state = {messages : []};
+        
+        this.chatStyle = {
+            display: 'inline-block',
+            verticalAlign: 'top',
+            width: '30%'
+        }
     }
 
-    hSend(target) {
+    sendMessage() {
         "use strict";
-        let content = document.getElementById('ChatSend').value;
+        let content = this._textField.getValue();
         let sio = this.props.io;
         console.log(`Sending message ${content}`);
         sio.emit('chatMessage', content);
+        this._textField.clearValue();
     }
-
-    hChange(target) {
-        "use strict";
-        this.setState({messages : target.target.value});
-    }
-
+    
     render() {
         "use strict";
         return (
           <div id="chat">
-              <ChatMessages id="ChatMessages" messages={this.state.messages} />
-              <textarea id="ChatSend"></textarea><input type="button" onClick={this.hSend.bind(this)} value="Send" />
+              <ChatMessages messages={this.state.messages} />
+              <div id="MessageSender" style={this.chatStyle}>
+                  <TextField
+                      hintText="Type a message"
+                      multiLine={true}
+                      ref={(textField) => this._textField = textField}
+                      />
+                  <FlatButton label="Send" onTouchTap={this.sendMessage.bind(this)} />
+              </div>
           </div>
         );
     }
